@@ -29,3 +29,8 @@ pip install -r paquetes.txt
 ```
 git pull
 ```
+
+#### crear ramas hijas
+```
+git checkout -b rama-hija
+```
