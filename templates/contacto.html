@@ -10,59 +10,44 @@
 
     <div class="container mt-4">
         <h3>Registro de Mascota</h3>
+
         <div class="row">
+            <!-- columna de la mascota -->
             <div class="col col-md-6">
-                <div class="card">
-                    <div class="card-header">Información del Cliente</div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="txtNombres">Nombres:</label>
-                            <input type="text" class="form-control" placeholder="Escriba su nombre" id="txtNombres">
+
+                <!-- Formulario -->
+                <form action="{{ url_for('guardarMascota') }}" method="post">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Información de la mascota</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="txtNombreMascota">Nombre de la mascota:</label>
+                                <input type="text" class="form-control" placeholder="Escriba el nombre de sus mascota" name="txtNombreMascota" id="txtNombreMascota">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTipoMascota">Tipo de Mascota:</label>
+                                <input type="text" class="form-control" placeholder="perro, gato doméstico, conejo doméstico, Hámster, etc" name="txtTipoMascota" id="txtTipoMascota">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtRaza">Raza:</label>
+                                <input type="text" class="form-control" placeholder="Doberman, Caniche, San Bernardo, etc" name="txtRaza" id="txtRaza">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEdad">Edad:</label>
+                                <input type="number" class="form-control" placeholder="Edad de su mascota" name="txtEdad" id="txtEdad">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="txtEmail">Email:</label>
-                            <input type="text" class="form-control" placeholder="Escriba su email" id="txtEmail">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtTelefono">Nº. de telefono:</label>
-                            <input type="text" class="form-control" placeholder="Escriba su teléfono" id="txtTelefono">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtDirección">Dirección:</label>
-                            <input type="text" class="form-control" placeholder="Escriba su dirección" id="txtDirección">
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" name="btnGuardar" id="btnGuardar">Guardar</button>
                         </div>
                     </div>
-                </div>
+                </form>
+                <!--  -->
+
             </div>
-            <div class="col col-md-6">
-                <div class="card">
-                    <div class="card-header">Información de la mascota</div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="txtNombreMascota">Nombre de la mascota:</label>
-                            <input type="text" class="form-control" placeholder="Escriba el nombre de sus mascota" id="txtNombreMascota">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtTipoMascota">Tipo de Mascota:</label>
-                            <input type="text" class="form-control" placeholder="perro, gato doméstico, conejo doméstico, Hámster, etc" id="txtTipoMascota">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtRaza">Raza:</label>
-                            <input type="text" class="form-control" placeholder="Doberman, Caniche, San Bernardo, etc" id="txtRaza">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtEdad">Edad:</label>
-                            <input type="number" class="form-control" placeholder="Edad de su mascota" id="txtEdad">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--  -->
         </div>
-        <div class="row mt-2">
-            <div class="col col-md-12">
-                <button class="btn btn-primary btn-block" id="btnGuardar">Guardar</button>
-            </div>
-        </div>
+
         <div class="row mt-4 d-none" id="rowAlerta">
             <div class="col col-md-12">
                 <div class="alert alert-success">

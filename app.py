@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -14,6 +14,12 @@ def contacto():
 @app.route('/contacto2')
 def contacto2():
     return render_template('contacto.html')
+
+@app.route('/guardar-mascota', methods=['POST'])
+def guardarMascota():
+    print(request.form)
+    nombreMascota = request.form.get('txtNombreMascota')
+    return f"Ya llego tu mascota <strong>{nombreMascota}</strong> al servidor"
 
 # se pregunta por el proceso principal
 if __name__=='__main__':
